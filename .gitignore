@@ -1,1 +1,16 @@
+# From /
 /.env.development
+/COMMAND
+/COMMAND RASPBERRY
+/COMMAND RETE
+/esercizio_alunni.sh
+
+# From 00_OpenWRT
+/00_OpenWRT/00_crontab
+/00_OpenWRT/configurazione_openvpn.sh
+/00_OpenWRT/configurazione_wifi.sh
+/00_OpenWRT/script_auto_configurazione.sh
+
+# From 01_Kali
+/01_Kali/disassemblare_APK.sh
+/01_Kali/history.sh
